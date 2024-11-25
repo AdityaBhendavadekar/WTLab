@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery List Operations</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 10px;
+            border: 1px solid #ddd;
+            width: 150px;
+        }
+        ul li {
+            padding: 5px;
+            cursor: pointer;
+        }
+        ul li:hover {
+            background-color: #f0f0f0;
+        }
+        button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h2>jQuery List Operations</h2>
+
+<div class="container">
+    <div>
+        <h4>List 1</h4>
+        <ul id="list1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <button id="copyToList2">Copy to List 2</button>
+    </div>
+    <div>
+        <h4>List 2</h4>
+        <ul id="list2">
+        </ul>
+        <button id="addItem">Add New Item</button>
+    </div>
+</div>
+
+<script>
+    // Copy contents from List 1 to List 2
+    $(document).ready(function () {
+        $("#copyToList2").click(function () {
+            $("#list1 li").each(function () {
+                // Append a copy of each item in List 1 to List 2
+                $("#list2").append(`<li>${$(this).text()}</li>`);
+            });
+        });
+
+        // Add a new item to List 2
+        $("#addItem").click(function () {
+            const newItem = prompt("Enter new item:");
+            if (newItem) {
+                $("#list2").append(`<li>${newItem}</li>`);
+            }
+        });
+    });
+</script>
+
+</body>
+</html>

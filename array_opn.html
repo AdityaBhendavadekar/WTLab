@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Add Elements to Array</p>
+    <input type="text" name="add" id="add">
+    <button onclick="handleAdd()">Add Student</button>
+
+    <p>Input Array: </p>
+    <p id="array"></p>
+
+    <input type="text" name="search" id="search">
+    <button onclick="handleSearch()">Search in Array</button>
+    <p id="result"></p>
+
+    <button onclick="handleSort()">Sort Array</button>
+    <p id="sorted"></p>
+
+    <script>
+
+        let array = [];
+
+        function handleAdd(){
+            let newEle = document.getElementById('add');
+            let number = newEle.value;
+            
+            newEle.value = "";
+
+            array.push(number)
+            document.getElementById('array').innerHTML = array;
+            
+        }
+
+        function handleSearch(){
+            let searchEle = document.getElementById('search');
+            let searchValue = searchEle.value;
+            let result = array.includes(searchValue);
+            if(result){
+                document.getElementById('result').innerHTML = `${searchValue} is present in array`;
+            }else{
+                document.getElementById('result').innerHTML = `${searchValue} is not present in array`;
+            }
+            
+            searchEle.value = "";
+        }
+
+        function handleSort(){
+            array.sort();
+
+            const mainele = document.getElementById('sorted');
+            
+            while(mainele.firstChild){
+                mainele.removeChild(mainele.firstChild);
+            }
+
+            array.forEach(ele => {
+                const tag = document.createElement('p');
+                tag.innerHTML = ele;
+                mainele.appendChild(tag);
+            });
+
+            
+        }
+
+    </script>
+    
+
+</body>
+</html>

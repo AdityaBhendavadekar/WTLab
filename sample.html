@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My CV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            padding: 20px;
+        }
+        .section {
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="/media/aditya/Work/B-Tech/TY/WT/Lab/vidu--4-2024-11-19T13_53_06Z.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+
+    <div class="container content">
+        <h1 class="text-center">My CV</h1>
+        <div class="row">
+            <div class="col-md-4 section">
+                <h2>About Me</h2>
+                <p>Brief introduction about yourself, your background, and your interests.</p>
+            </div>
+            <div class="col-md-4 section">
+                <h2>Experience</h2>
+                <ul>
+                    <li>Job Title 1 - Company Name (Year - Year)</li>
+                    <li>Job Title 2 - Company Name (Year - Year)</li>
+                    <li>Job Title 3 - Company Name (Year - Year)</li>
+                </ul>
+            </div>
+            <div class="col-md-4 section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>Skill 1</li>
+                    <li>Skill 2</li>
+                    <li>Skill 3</li>
+                    <li>Skill 4</li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12 section">
+                <h2>Contact</h2>
+                <p>Email: your.email@example.com</p>
+                <p>Phone: (123) 456-7890</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

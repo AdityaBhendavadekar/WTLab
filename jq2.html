@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery Example</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery Example</h1>
+
+    <div>
+        <h3>List 1</h3>
+        <ul id="list1">
+            <li>Item 1</li>
+            <li>Item 2</li>
+            <li>Item 3</li>
+        </ul>
+        <button id="copyButton">Copy Items to List 2</button>
+    </div>
+
+    <div>
+        <h3>List 2</h3>
+        <ul id="list2">
+            <!-- Items will be copied here -->
+        </ul>
+    </div>
+
+    <div>
+        <button id="addElementButton">Add New Element</button>
+        <div id="newElementContainer">
+            <!-- New element will be added here -->
+        </div>
+    </div>
+
+    <script>
+        // Copy contents from List 1 to List 2
+        $(document).ready(function () {
+            $('#copyButton').on('click', function () {
+                $('#list1 li').each(function () {
+                    // Clone each item and append it to List 2
+                    $('#list2').append($(this).clone());
+                });
+            });
+
+            // Create a new element dynamically
+            $('#addElementButton').on('click', function () {
+                $('#newElementContainer').append('<p>A new paragraph element is added!</p>');
+            });
+        });
+    </script>
+</body>
+</html>

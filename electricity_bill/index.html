@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>Electricity bill calculator</h2>
+
+        <!-- <form action="" id="eleForm"> -->
+
+            <input type="number" name="units" id="units">
+            <button onclick="handleCalc()">Calculate Electricity Bill</button>
+
+
+            <!-- <p>Your electricity bill is: </p> -->
+            <p id="bill"></p>
+
+        <!-- </form> -->
+    </div>
+
+    <script>
+
+        async function handleCalc(){
+            
+            let units = document.getElementById('units').value;
+            console.log(units)
+            let billele = document.getElementById('bill');
+
+            try {
+                const response = await fetch("http://localhost:3000/calculator", {
+                    method:'POST',
+                    headers:{
+                        'Content-Type':'application/json'
+                    },
+                    body:JSON.stringify({units:parseFloat(units)})
+                })
+
+                if (response.ok){
+                    const data = await response.json();
+                    billele.innerHTML = `Your electricity bill is: ${data.bill.toFixed(2)} Rs.`
+                }
+
+            } catch (error) {
+                console.log(error)
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>

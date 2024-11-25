@@ -1,0 +1,9 @@
+.form{
+  display: flex;
+  gap: 20px;
+}
+
+.subject{
+  display: flex;
+  flex-direction: column;
+}

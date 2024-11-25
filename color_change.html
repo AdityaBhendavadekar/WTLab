@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .up{
+            /* background-color: gray; */
+            height: 500px;
+        }
+
+        .down{
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <script>
+
+        function buttonClick(colors){
+            // alert(color)
+            document.getElementById("up").style.background=colors;
+        }
+    </script>
+    
+    <div class="main-container">
+
+        <div class="up" id="up">
+
+
+        </div>
+
+        <div class="down">
+            <button onclick="buttonClick('red')" >Red</button>
+            <button onclick="buttonClick('green')">Green</button>
+            <button onclick="buttonClick('blue')">Blue</button>
+        </div>
+
+    </div>
+
+</body>
+</html>

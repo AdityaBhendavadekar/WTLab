@@ -1,0 +1,16 @@
+.main-container{
+    display: grid;
+    grid-template-columns: repeat(8,1fr);
+    grid-template-rows: repeat(8,1fr);
+    width: 500px;
+    height: 500px;
+    
+}
+
+.grid-item{
+    border: 1px black solid;
+}
+
+.grid-item:hover{
+    border: 2px red solid;
+}
